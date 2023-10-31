@@ -16,11 +16,10 @@ export default function ListItem({ result }: any) {
           <button
             className="list-btn"
             onClick={(e) => {
-              fetch("/api/post/delete", { method: "DELETE", body: result[i]._id }).then((e: any) => {
-                e.target.parentElement.style.opacity = 0;
-                setTimeout(() => {
-                  e.target.parentElement.style.display = "none";
-                }, 1000);
+              fetch(`/api/abc/${result[i]._id}`, {
+                method: "POST", // POST 요청으로 변경
+              }).then((e: any) => {
+                console.log("a");
               });
             }}
           >

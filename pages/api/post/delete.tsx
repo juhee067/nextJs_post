@@ -17,6 +17,6 @@ export default async function handler(
 ) {
   if (req.method == "DELETE") {
     let db = (await connectDB).db("forum");
-    await db.collection("post").deleteOne({ _id: new ObjectId(req.body) });
+    let result = await db.collection("post").deleteOne({ _id: new ObjectId(req.body) });
   }
 }

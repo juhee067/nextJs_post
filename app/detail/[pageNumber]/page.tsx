@@ -4,7 +4,6 @@ import { ObjectId } from "mongodb";
 export default async function Detail(props: any) {
   let db = (await connectDB).db("forum"); // 클라이언트로부터 데이터베이스를 얻습니다.
   //하나만 가지고 오고 싶다 findOne()
-  console.log(props);
   let result = await db.collection("post").findOne({ _id: new ObjectId(props.params.pageNumber) });
 
   if (result) {
